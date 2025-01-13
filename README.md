@@ -12,15 +12,26 @@ I'm breaking down each chapter of the book into three Jupyter Notebooks:
 2. **Exercises:** Here's where I tackle the exercises at the end of each chapter. I try to provide clear explanations and code implementations for the solutions. 
 3. **Quiz:** This is for me to test my own understanding. I come up with my own questions to quiz myself on the chapter's material.
 
+## Dependencies:
+
+Create a virtual env with python and install:
+
+```bash
+pip install numpy gymnasium plotly
+```
+
 ## Disclaimer:
 
 This repo is still under construction. Expect updates, improvements, and maybe even some bugs along the way. If you find some mistakes, please open an issue, I'll be glad to fix it.
 
 ## Table of Contents
 
-1. [Introduction](#example)
-2. [Multi-Armed Bandits](#example2)
-3. [Deep Q-Learning with Atari Games](#third-example)
+1. [**Introduction**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/01_Introduction)
+    - what is reinforcement learning ?
+    - How reinforcement learning differ from other type of machine learning ?
+    - Elements of Reinforcement Learning
+2. [**Multi-Armed Bandits**](#example2)
+3. [**Finite Markov Decision Processes**](#third-example)
 
 ## Who is this for?
 
