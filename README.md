@@ -17,7 +17,7 @@ I'm breaking down each chapter of the book into three Jupyter Notebooks:
 Create a virtual env with python and install:
 
 ```bash
-pip install numpy gymnasium plotly nbformat
+pip install numpy gymnasium plotly nbformat numba
 ```
 
 ## Disclaimer:
