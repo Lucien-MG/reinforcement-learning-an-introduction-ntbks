@@ -95,3 +95,66 @@ def run_exp(nb_exps, env, agent):
         list_optimal_action += list_optimal_action_tmp
 
     return list_rewards / nb_exps, (list_optimal_action / nb_exps) * 100
+
+def run_parameter_study(nb_exps, env, agents_parameters):
+    results_mean_reward = {}
+    results_percent_optimal_action = {}
+
+    for agent_name in agents_parameters:
+        results_mean_reward[agent_name] = []
+        results_percent_optimal_action[agent_name] = []
+
+    for agent_name in agents_parameters:
+        print(agent_name)
+
+        for parameter in agents_parameters[agent_name]["parameters"]:
+            print("    running parameters:", parameter)
+
+            agent = agents_parameters[agent_name]["class"](nb_actions=env.action_space.n, **parameter)
+
+            mean_reward_over_steps, percent_optimal_action_over_steps = run_exp(nb_exps, env, agent)
+
+            mean_reward = np.mean(mean_reward_over_steps)
+            mean_optimal_action_percent = np.mean(percent_optimal_action_over_steps)
+
+            results_mean_reward[agent_name].append(mean_reward)
+            results_percent_optimal_action[agent_name].append(mean_optimal_action_percent)
+
+    return results_mean_reward, results_percent_optimal_action
+
+def plot_parameter_study_results(agents_parameters, results_mean_reward, results_percent_optimal_action):
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+
+    fig = make_subplots(rows=1, cols=2, subplot_titles=["Mean Reward / Parameters", "Mean Optimal Action / Parameters"])
+
+    x = []
+
+    for agent_name in results_mean_reward:
+        parameter = agents_parameters[agent_name]["variable"]
+        x += [p[parameter] for p in agents_parameters[agent_name]["parameters"]]
+
+        fig.add_trace(
+            go.Scatter(x=[p[parameter] for p in agents_parameters[agent_name]["parameters"]],
+                       y=results_mean_reward[agent_name], line_color=agents_parameters[agent_name]["color"],
+                       name=agent_name)
+        , row=1, col=1)
+
+        fig.add_trace(
+            go.Scatter(x=[p[parameter] for p in agents_parameters[agent_name]["parameters"]],
+                       y=results_percent_optimal_action[agent_name], line_color=agents_parameters[agent_name]["color"],
+                       showlegend=False)
+        , row=1, col=2)
+
+    fig.update_layout(
+        title="Parameter Study",
+        legend_title="Parameters",
+    )
+
+    fig.update_xaxes(
+        type='category',
+        tickmode= 'array',
+        categoryorder= 'array',
+        categoryarray= sorted(x))
+
+    fig.show()
