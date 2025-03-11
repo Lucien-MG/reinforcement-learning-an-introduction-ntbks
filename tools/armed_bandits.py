@@ -1,3 +1,22 @@
+from numba import int32, float64
+from numba.experimental import jitclass
+
+jit_types = [
+    ('nb_actions', int32),
+    ('epsilon', float64),
+    ('confidence', float64),
+    ('alpha', float64),
+    ('optimistic_value', float64),
+    ('q', float64[:]),
+    ('reward_sum', float64[:]),
+    ('nb_action_taken', float64[:]),
+    ('nb_times_taken_action', float64[:]),
+    ('upper_confidence', float64[:]),
+    ('soft_probs', float64[:]),
+    ('mean_reward', float64),
+    ('tt_action_taken', float64)
+]
+
 def plot_env_sample(env):
     import plotly.graph_objects as go
     env.reset()
