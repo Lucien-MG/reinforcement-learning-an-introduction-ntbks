@@ -30,8 +30,8 @@ This repo is still under construction. Expect updates, improvements, and maybe e
     - What is reinforcement learning ?
     - How reinforcement learning differ from other type of machine learning ?
     - Elements of Reinforcement Learning
-2. [**Multi-Armed Bandits**](#example2)
-3. [**Finite Markov Decision Processes**](#third-example)
+2. [**Multi-Armed Bandits**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/02_Multi-armed_Bandits)
+3. [**Finite Markov Decision Processes**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/03_Finite_Markov_Decision_Processes)
 
 ## Who is this for?
 
