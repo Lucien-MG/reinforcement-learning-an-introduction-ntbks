@@ -32,6 +32,7 @@ This repo is still under construction. Expect updates, improvements, and maybe e
     - Elements of Reinforcement Learning
 2. [**Multi-Armed Bandits**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/02_Multi-armed_Bandits)
 3. [**Finite Markov Decision Processes**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/03_Finite_Markov_Decision_Processes)
+3. [**Dynamic Programming**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/04_Dynamic_Programming)
 
 ## Who is this for?
 
