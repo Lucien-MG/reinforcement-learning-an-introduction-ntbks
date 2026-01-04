@@ -28,6 +28,7 @@ This repo is still under construction. Expect updates, improvements, and maybe e
 
 1. [**Introduction**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/01_Introduction)
     - What is reinforcement learning ?
+    - The field
     - How reinforcement learning differ from other type of machine learning ?
     - Elements of Reinforcement Learning
 2. [**Multi-Armed Bandits**](https://github.com/Lucien-MG/reinforcement-learning-an-introduction-ntbks/tree/main/chapters/02_Multi-armed_Bandits)
